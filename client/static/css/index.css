@@ -1,0 +1,111 @@
+#index-wrap{
+    height: 100%;
+}
+.header{
+    height:60%;
+    /*background: antiquewhite;*/
+    background-image: url('../image/banner.jpg');
+    background-position:center; 
+}
+.header .header-anchor{
+    height: 25%;
+    position: relative;
+    background: rgba(255, 255, 255, 0.5);
+    filter: Alpha(opacity=50);/*IE*/
+}
+.header .header-anchor .header-fix{
+    height:10%;
+    width: 100%;
+    border-bottom: 1px gainsboro solid;
+    position: fixed;
+    left:0;
+    top:0;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    color: #fb9593;
+    box-sizing: border-box;
+}
+.header .header-anchor .header-fix .header-search{
+    height: 100%;
+    width:25%;  
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.header .header-anchor .header-fix .header-search .search-blank{
+    width:80%;
+    padding: 0 0.7em;
+    /*border-bottom: 1.47px #fb9593 solid;*/
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    font-size:1.2rem;
+    background: #FFFFFF
+}  
+.header .header-anchor .header-fix .header-logo{
+    height: 100%;
+    width:50%;
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+}
+.header .header-anchor .header-fix .header-logo h3{
+    font-family:'Kunstler Script';
+    font-size:3rem;
+}
+.header .header-anchor .header-fix .header-userinfo{
+    height: 100%;
+    width:25%;
+}
+.header .header-anchor .header-fix .header-userinfo{
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+}
+.header .header-anchor .header-fix .header-userinfo .user-portrait{
+    display: inline-block;
+    margin: 0.5rem;
+}
+.header .header-anchor .header-fix .header-userinfo .social-links{
+    display: inline-block;
+}
+.header .header-anchor .header-fix .header-userinfo .social-links li{
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+
+.header .header-anchor .header-navbar{
+    height: 33.3%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display:flex;
+    justify-content:center;
+    align-items:Center;
+}
+.header .header-anchor .header-navbar .nav-menu li{
+    display: inline-block;
+    margin: 2rem;
+    color:#888888;
+    font-weight:bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.header .banner{
+    height:66.7%;
+    display: flex;
+    justify-content:center;
+    align-items:Center; 
+    z-index: -1;
+}
+.header .banner h2{
+    padding: 0 0.5rem;
+    border: 0.3rem #ffffff solid;
+    border-radius:  0.6rem;
+    font-size:4rem;
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace;
+}
