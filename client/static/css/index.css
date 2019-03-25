@@ -9,19 +9,17 @@
     background-position:center; 
     position: relative;
 }
-.header .header-blur-box{
+.header-blur-box{
     width: 100%;
-    height: 25%;
+    height: 100%;
     background:rgba(255,255,255,0.65);
     filter:Alpha(opacity=65);
-    z-index: 0;
-    position: absolute;
+    position: absolute; 
 }
 .header .header-anchor{
     width: 100%;
     height: 25%;
-    z-index: 1;
-    position: absolute;
+    position: relative;
 }
 .header .header-anchor .header-fix{
     height:10%;
@@ -35,6 +33,9 @@
     align-items: center;
     color: #fb9593;
     box-sizing: border-box;
+}
+.header .header-anchor .header-fix .blur-layer{
+    z-index: -1;
 }
 .header .header-anchor .header-fix .header-search{
     height: 100%;
@@ -92,9 +93,15 @@
     position: absolute;
     bottom: 0;
 }
+
+.header .header-anchor .header-navbar .blur-layer{ 
+    z-index: 1;
+}
 .header .header-anchor .header-navbar .nav-menu{
     height: 100%;
     width: 100%;
+    position: absolute; 
+    z-index: 2;
     display:flex;
     justify-content:center;
     align-items: center;
