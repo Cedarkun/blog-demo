@@ -5,6 +5,9 @@
 html, body {
     height: 100%; 
 }
+input,textarea,select,a:focus {
+    outline: none;
+}
 ul, li{
     list-style-type:none;
 }
