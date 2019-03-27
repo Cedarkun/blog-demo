@@ -1,6 +1,11 @@
-#index-wrap{
+#app{
     
 }
+
+
+
+
+/*头部*/
 .header{
     height:450px;
     /*background: antiquewhite;*/
@@ -9,11 +14,17 @@
     background-position:center; 
     position: relative;
 }
+
+
+/*头部 固定栏*/
 .header .header-anchor{
     width: 100%;
     height: 25%;
     position: relative;
 }
+
+
+/*头部 固定栏 标题栏*/
 .header .header-anchor .header-titlebar{
     height:67%;
     width: 100%;
@@ -28,8 +39,7 @@
     color: #fb9593;
     box-sizing: border-box;
 }
-
-.header .header-anchor .header-titlebar .header-search{
+.header-titlebar .header-search{
     height: 100%;
     width:25%;  
     display: flex;
@@ -37,7 +47,7 @@
     align-items: center;
     box-sizing: border-box;
 }
-.header .header-anchor .header-titlebar .header-search .search-blank{
+.header-titlebar .header-search .search-blank{
     width:80%;
     height: 30px;
     /*border-bottom: 1.47px #fb9593 solid;*/
@@ -47,10 +57,10 @@
     filter:Alpha(opacity=75); 
     position: relative;
 }
-.header .header-anchor .header-titlebar .header-search .search-blank:hover{
+.header-titlebar .header-search .search-blank:hover{
     background: #FFFFFF;
 }
-.search-blank .ipt{
+.header-titlebar .header-search .search-blank .ipt{
     width: 85%;
     height: 100%;
     padding: 0 0.5rem;
@@ -60,7 +70,7 @@
     background: transparent;
     line-height: 30px;
 }
-.search-blank .search-btn{
+.header-titlebar .header-search .search-blank .search-btn{
     background:url('../image/icon/search.png') no-repeat;
     background-position: center;
     background-size:24px;
@@ -70,33 +80,33 @@
     height: 100%;
     cursor: pointer;
 }
-.search-blank .search-btn:hover{
+.header-titlebar .header-search .search-blank .search-btn:hover{
     background-image:url('../image/icon/search_hover.png');
-}  
+}
 
-
-.header .header-anchor .header-titlebar .header-logo{
+.header-titlebar .header-logo{
     height: 100%;
     width:50%;
     display: flex;
     justify-content:center;
     align-items:Center;
 }
-.header .header-anchor .header-titlebar .header-logo h3{
+.header-titlebar .header-logo h3{
     font-family:'Kunstler Script';
     font-size:3rem;
 }
-.header .header-anchor .header-titlebar .header-userinfo{
+
+.header-titlebar .header-userinfo{
     height: 100%;
     width:25%;
     display: flex;
     justify-content:center;
     align-items:Center
 }
-.header-userinfo a{
+.header-titlebar .header-userinfo a{
     color: #fb9593;
 }
-.header-userinfo .user-portrait{
+.header-titlebar .header-userinfo .user-portrait{
     display: inline-block;
     width: 20px;
     height:20px;
@@ -104,15 +114,14 @@
     background: url('../image/icon/user.png');
     cursor: pointer;
 }
-.header-userinfo .user-portrait:hover{
+.header-titlebar .header-userinfo .user-portrait:hover{
     background: url('../image/icon/user_hover.png');
 }
-
-.header .header-anchor .header-titlebar .header-userinfo .social-links{
+.header-titlebar .header-userinfo .social-links{
     display: inline-block;
     height: 20px;
 }
-.social-links li{
+.header-titlebar .header-userinfo .social-links li{
     display: inline-block;
     width: 20px;
     height:20px;
@@ -139,8 +148,7 @@
 }
 
 
-
-
+/*头部 固定栏 导航栏*/
 .header .header-anchor .header-navbar{
     height: 33.3%;
     width: 100%;
@@ -149,7 +157,7 @@
     filter:Alpha(opacity=65);
     bottom: 0;
 }
-.header .header-anchor .header-navbar .nav-menu{
+.header-navbar .nav-menu{
     height: 100%;
     width: 100%;
     position: absolute; 
@@ -159,7 +167,7 @@
     align-items: center;
     
 }
-.header .header-anchor .header-navbar .nav-menu .menu-item{
+.header-navbar .nav-menu .menu-item{
     height: 100%;
     margin: 0 2rem;
     padding:0 1rem;
@@ -171,16 +179,17 @@
     font-size: 0.9rem;
    /* font-family: 'Courier New', Courier, monospace;*/
 }
-.header .header-anchor .header-navbar .nav-menu .menu-item a{
+.header-navbar .nav-menu .menu-item a{
     color:#686868;
 }
-.header .header-anchor .header-navbar .nav-menu .menu-item:hover{
+.header-navbar .nav-menu .menu-item:hover{
     background:rgba(255,255,255,0.65);
     filter:Alpha(opacity=65); 
     cursor:pointer; 
 }
 
 
+/*头部 横幅*/
 .header .banner{
     width:100%;
     height:75%;
@@ -203,10 +212,12 @@
 
 
 
+/*主体*/
 #body{
     width:100%;
     margin: 2rem 0;
 } 
+/*主体 动态*/
 .post{
     width:65%;
     height: 15rem;
@@ -258,13 +269,17 @@
     font-weight:300;
 }
 
+
+
+
+
+/*底部*/
 .footer{
     width: 100%;
     padding: 32px 0;
     border-top: 1px solid #e7e7e7;
     text-align: center;
 }
-
 .footer .copyright
 {
     text-align: center;
