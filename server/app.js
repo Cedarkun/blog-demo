@@ -7,17 +7,24 @@ bodyParser = require('body-parser'),
 app = express();
 
 //define views directory
-app.set('views', path.join(__dirname, 'client/build/')); 
+app.set('views', path.join(__dirname, '../client/view')); //client/build
 //define a customized render engine
 app.engine('.html', require('ejs').renderFile);
 //using this engine
 app.set('view engine', 'html');
+
+app.use(express.static(path.join(__dirname,'../client/static')));
+
+app.use('/index',(req,res,next)=>{
+    res.render('index');
+});
 
 app.use((req,res,next)=>{
     let err = new Error('No found');
     err.status = 404;
     next(err);//find error handle directly
 })
+
 
 // error handler
 app.use((err, req, res, next)=>{
