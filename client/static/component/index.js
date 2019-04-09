@@ -1,5 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Main from 'Main'
+import Header from './Main'
+import '../css/common.css';
+import '../css/index.css';
 
-render(<Main />, document.getElementById('app'));
+render(<Header />, document.getElementById('app'));

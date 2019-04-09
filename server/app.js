@@ -6,17 +6,19 @@ http = require('http'),
 bodyParser = require('body-parser'),
 app = express();
 
+/*
 //define views directory
-app.set('views', path.join(__dirname, '../client/view')); //client/build
+app.set('views', path.join(__dirname, '../client/build')); //client/build
 //define a customized render engine
 app.engine('.html', require('ejs').renderFile);
 //using this engine
 app.set('view engine', 'html');
-
-app.use(express.static(path.join(__dirname,'../client/static')));
+*/
+app.use(express.static(path.join(__dirname,'../client/build')));
 
 app.use('/index',(req,res,next)=>{
-    res.render('index');
+    //res.render('index');
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));        
 });
 
 app.use((req,res,next)=>{
@@ -35,7 +37,8 @@ app.use((err, req, res, next)=>{
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    //res.render('error');
+    res.sendFile(path.join(__dirname, '../client/build/error.html')); 
 });
 
 const server= http.createServer(app);
