@@ -1,7 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Header from './Main'
+import App from './App'
 import '../css/common.css';
 import '../css/index.css';
 
-render(<Header />, document.getElementById('app'));
+render(<App />, document.getElementById('app'));

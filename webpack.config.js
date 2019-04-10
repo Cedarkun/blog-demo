@@ -12,7 +12,7 @@ module.exports = {
     },
   output: {
         filename: 'assets/js/[name]-[chunkhash].js',
-        path: path.resolve(__dirname, 'client/build'),
+        path: path.resolve(__dirname, 'client/build')
   },
 
 
@@ -46,7 +46,7 @@ module.exports = {
         {
             test:/\.(png|svg|jpg|jpeg|gif)$/,
             use:[
-                {loader:'url-loader', options:{ name: 'image/[name].[ext]'}}
+                {loader:'file-loader', options:{name: 'image/[name].[ext]', outputPath:'assets/image', publicPath:'../image/'}}
             ]
         },
 

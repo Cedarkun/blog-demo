@@ -6,19 +6,19 @@ http = require('http'),
 bodyParser = require('body-parser'),
 app = express();
 
-/*
+
 //define views directory
-app.set('views', path.join(__dirname, '../client/build')); //client/build
+app.set('views', path.join(__dirname, '../client/build')); 
 //define a customized render engine
 app.engine('.html', require('ejs').renderFile);
 //using this engine
 app.set('view engine', 'html');
-*/
+
 app.use(express.static(path.join(__dirname,'../client/build')));
 
 app.use('/index',(req,res,next)=>{
-    //res.render('index');
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));        
+    res.render('index',{curItem:0});
+    //res.sendFile(path.join(__dirname, '../client/build/index.html'));        
 });
 
 app.use((req,res,next)=>{
