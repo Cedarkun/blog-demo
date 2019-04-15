@@ -17,7 +17,7 @@ app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname,'../client/build')));
 
 app.use('/index',(req,res,next)=>{
-    res.render('index',{curItem:0});
+    res.render('index');
     //res.sendFile(path.join(__dirname, '../client/build/index.html'));        
 });
 
