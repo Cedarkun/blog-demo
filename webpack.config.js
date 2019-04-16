@@ -8,7 +8,7 @@ module.exports = {
   mode:'development',
   context:path.resolve(__dirname,'client'),
   entry:{
-      index:'./static/component/index.js'
+      index:'./static/app/test.js'
     },
   output: {
         filename: 'assets/js/[name]-[chunkhash].js',
