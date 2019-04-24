@@ -11,8 +11,10 @@ export default class Header extends React.Component {
     render() {
       return (
         <header className="header">
-          <TitleBar />
-          <NavBar />
+          <div  className="header-anchor">
+            <TitleBar />
+            <NavBar />
+          </div>
           <Banner />
         </header>
       );

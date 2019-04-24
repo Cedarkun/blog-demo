@@ -1,17 +1,19 @@
 import React, {Component, PropTypes} from 'react';
+import NavItem from './NavItem'
 
-export default class Header extends React.Component {
+export default class NavBar extends React.Component {
     constructor(props){
       super(props);
     }
 
     render() {
+      let items=[{itemName:'HOME'},{itemName:'PHOTOS'},{itemName:'ABOUTME'}];
       return (
        <nav className="header-navbar">
             <ul className="nav-menu">
-                <li className="menu-item"><a href="#">主页</a></li>
-                <li className="menu-item"><a href="#">相册</a></li>
-                <li className="menu-item"><a href="#">关于我</a></li>
+              {items.map((item, index) => (
+                <NavItem key={index} {...item} onClick={this.props. onNavItemClick(index)} />
+              ))}
             </ul>
         </nav>
       );
