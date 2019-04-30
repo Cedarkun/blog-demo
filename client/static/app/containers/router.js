@@ -18,6 +18,7 @@ class AppIndex extends Component {
                 <div>
                     <Switch>
                         <Route  path="/" component={Home}/>
+                        <Route  path="/login" component={Login}/>
                         <Route  path="/admin" component={Admin}/>
                         <Route  path="/notfound" component={NotFound}/>
                     </Switch>
