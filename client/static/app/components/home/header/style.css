@@ -1,0 +1,202 @@
+/*头部*/
+.header{
+    height:450px;
+    /*background: antiquewhite;*/
+    background-image: url('./image/banner.jpg');
+    background-size: 100% 150%;
+    background-position:center; 
+    position: relative;
+}
+
+
+/*头部 固定栏*/
+.header .header-anchor{
+    width: 100%;
+    height: 25%;
+    position: relative;
+}
+
+
+/*头部 固定栏 标题栏*/
+.header .header-anchor .header-titlebar{
+    height:67%;
+    width: 100%;
+    border-bottom: 1px gainsboro solid;
+    position: absolute;
+    top:0;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background:rgba(255,255,255,0.65);
+    filter:Alpha(opacity=65);
+    color: #fb9593;
+    box-sizing: border-box;
+}
+.header-titlebar .header-search{
+    height: 100%;
+    width:25%;  
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.header-titlebar .header-search .search-blank{
+    width:80%;
+    height: 30px;
+    /*border-bottom: 1.47px #fb9593 solid;*/
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    background:rgba(255,255,255,0.75);
+    filter:Alpha(opacity=75); 
+    position: relative;
+}
+.header-titlebar .header-search .search-blank:hover{
+    background: #FFFFFF;
+}
+.header-titlebar .header-search .search-blank .ipt{
+    width: 85%;
+    height: 100%;
+    padding: 0 0.5rem;
+    border: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    background: transparent;
+    line-height: 30px;
+}
+.header-titlebar .header-search .search-blank .search-btn{
+    background:url('./image/icon/search.png') no-repeat;
+    background-position: center;
+    background-size:24px;
+    position: absolute;
+    right:0;
+    width:15%;
+    height: 100%;
+    cursor: pointer;
+}
+.header-titlebar .header-search .search-blank .search-btn:hover{
+    background-image:url('./image/icon/search_hover.png');
+}
+
+.header-titlebar .header-logo{
+    height: 100%;
+    width:50%;
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+}
+.header-titlebar .header-logo h3{
+    font-family:'Kunstler Script';
+    font-size:3rem;
+}
+
+.header-titlebar .header-userinfo{
+    height: 100%;
+    width:25%;
+    display: flex;
+    justify-content:center;
+    align-items:Center
+}
+.header-titlebar .header-userinfo a{
+    color: #fb9593;
+}
+.header-titlebar .header-userinfo .user-portrait{
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    margin: 0 0.5rem;
+    background: url('./image/icon/user.png');
+    cursor: pointer;
+}
+.header-titlebar .header-userinfo .user-portrait:hover{
+    background: url('./image/icon/user_hover.png');
+}
+.header-titlebar .header-userinfo .social-links{
+    display: inline-block;
+    height: 20px;
+}
+.header-titlebar .header-userinfo .social-links li{
+    display: inline-block;
+    width: 20px;
+    height:20px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.social-links .email{
+    background: url('./image/icon/email.png');
+}
+.social-links .email:hover{
+    background: url('./image/icon/email_hover.png');
+}
+.social-links .qq{
+    background: url('./image/icon/qq.png');
+}
+.social-links .qq:hover{
+    background: url('./image/icon/qq_hover.png');
+}
+.social-links .github{
+    background: url('./image/icon/github.png');
+}
+.social-links .github:hover{
+    background: url('./image/icon/github_hover.png');
+}
+
+
+/*头部 固定栏 导航栏*/
+.header .header-anchor .header-navbar{
+    height: 33.3%;
+    width: 100%;
+    position: absolute;
+    background:rgba(255,255,255,0.65);
+    filter:Alpha(opacity=65);
+    bottom: 0;
+}
+.header-navbar .nav-menu{
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    z-index: 2;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    
+}
+.header-navbar .nav-menu .menu-item{
+    height: 100%;
+    margin: 0 2rem;
+    padding:0 1rem;
+    display: inline-block;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-weight:600;
+    font-size: 0.9rem;
+   /* font-family: 'Courier New', Courier, monospace;*/
+}
+.header-navbar .nav-menu .menu-item a{
+    color:#686868;
+}
+.header-navbar .nav-menu .menu-item:hover{
+    background:rgba(255,255,255,0.65);
+    filter:Alpha(opacity=65); 
+    cursor:pointer; 
+}
+
+
+/*头部 横幅*/
+.header .banner{
+    width:100%;
+    height:75%;
+    position: absolute;
+    bottom:0;
+    display: flex;
+    justify-content:center;
+    align-items:Center; 
+}
+.header .banner h2{
+    padding: 0 0.5rem;
+    border: 0.3rem #FFFFFF solid;
+    border-radius:  0.6rem;
+    font-size:4rem;
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace;
+}

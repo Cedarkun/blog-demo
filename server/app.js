@@ -1,46 +1,28 @@
-const express = require('express'),
-path =require('path'),
-http = require('http'),
-//session = require('express-session'),
-//FileStore = require('session-file-store')(session),
-bodyParser = require('body-parser'),
-app = express();
+const path = require('path'),
+    express = require('express'),
+    app = express();
+const webpack = require('webpack'),
+    config = require('../webpack.config'),
+    server =require('http').createServer(app),
+    compiler = webpack(config);
 
-
-//define views directory
-app.set('views', path.join(__dirname, '../client/build')); 
-//define a customized render engine
-app.engine('.html', require('ejs').renderFile);
-//using this engine
-app.set('view engine', 'html');
 
 app.use(express.static(path.join(__dirname,'../client/build')));
 
-app.use('/index',(req,res,next)=>{
-    res.render('index');
-    //res.sendFile(path.join(__dirname, '../client/build/index.html'));        
+app.use(require('webpack-dev-middleware')(compiler, {
+    //是否向控制台显示任何内容 
+    noInfo: false,
+    //绑定中间件的公共路径,与webpack配置的路径相同
+    publicPath: config.output.publicPath
+}));
+app.use(require('webpack-hot-middleware')(compiler));
+
+app.use('*',(req,res,next)=>{
+    //res.render('index');
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));        
 });
 
-app.use((req,res,next)=>{
-    let err = new Error('No found');
-    err.status = 404;
-    next(err);//find error handle directly
+
+server.listen(200,(err)=>{
+    console.log('Listening at :200');
 })
-
-
-// error handler
-app.use((err, req, res, next)=>{
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    //req.app save reference to the instance of the Express using middleware
-    res.locals.error = req.app.get('env') === 'development' ? err : {};//online production
-
-    // render the error page
-    res.status(err.status || 500);
-    //res.render('error');
-    res.sendFile(path.join(__dirname, '../client/build/error.html')); 
-});
-
-const server= http.createServer(app);
-server.listen(200);
- 

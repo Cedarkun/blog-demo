@@ -1,9 +1,7 @@
-import { combineReducers } from 'redux'
-import navItem from './navItem'
+import { combineReducers } from 'redux';
+import login from './login';
+
+const AppReducer = combineReducers({login})
 
 
-const blogApp = combineReducers({
-    navItem
-})
-
-export default blogApp
+export default AppReducer;

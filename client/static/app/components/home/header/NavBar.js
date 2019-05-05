@@ -7,12 +7,12 @@ export default class NavBar extends React.Component {
     }
 
     render() {
-      let items=[{itemName:'HOME'},{itemName:'PHOTOS'},{itemName:'ABOUTME'}];
+      let items=[{itemName:'HOMEaaa'},{itemName:'PHOTOS'},{itemName:'ABOUTME'}];
       return (
        <nav className="header-navbar">
             <ul className="nav-menu">
               {items.map((item, index) => (
-                <NavItem key={index} {...item} onClick={this.props. onNavItemClick(index)} />
+                <NavItem key={index} {...item}  />
               ))}
             </ul>
         </nav>

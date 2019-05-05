@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --progress --display-modules --display-reasons"
+    "build": "webpack --progress"
   },
   "author": "Cedar",
   "license": "ISC",
@@ -26,7 +26,10 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-dev-server-output": "0.0.6",
+    "webpack-hot-middleware": "^2.24.4"
   },
   "dependencies": {
     "antd": "^3.16.6",

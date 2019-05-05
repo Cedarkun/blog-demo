@@ -7,9 +7,7 @@ export default class NavItem extends React.Component {
 
     render() {
       return (
-       <li onClick={this.props.click}><a href="#">{this.props.text}</a></li>
+       <li><a href="#">{this.props.itemName}</a></li>
       );
     }
 }
-
-export default Todo
