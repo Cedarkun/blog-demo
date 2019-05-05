@@ -2,7 +2,7 @@ import React, {Component, PropTypes} from 'react';
 import TitleBar from './TitleBar';
 import NavBar from './NavBar';
 import Banner from './Banner';
-//import './style.css';
+import './style.css';
 
 export default class Header extends React.Component {
     constructor(props){

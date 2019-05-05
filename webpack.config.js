@@ -10,7 +10,8 @@ module.exports = {
   mode:'development',
   context:path.resolve(__dirname,'client'),
   entry:[
-   // 'webpack-hot-middleware/client?noInfo=true&reload=true' ,
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client?noInfo=true&reload=true' ,
     './static/app/index.js'
   ],
 
@@ -20,41 +21,40 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins:[
-      /*
-      new htmlWebpackPlugin({
+       new htmlWebpackPlugin({
           template:'view/index.html',
           filename:'index.html',
         }),
+        
+        
         new miniCssExtractPlugin({
             filename: "assets/css/[name].css",
             chunkFilename: "[id].css"
         }),
-        */
+        
         new optimizeCssAssetsPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),// 实现刷新浏览器必写
         new webpack.NoEmitOnErrorsPlugin(),
         
         new WebpackDevServerOutput({
-            // 文件输出路径,这里设置为devServer服务路径的子路径
+            // 文件输出路径,
             // 这样就可以通过URL访问到了
-            path: "./bulid/assets",
+            path: "./client/build",//当前config文件路劲为基准
             // 重新编译时删除之前你的文件
-            // 这里可能会有效率问题
             isDel: true
         })
         
 
   ],
 
-
   module:{
     rules:[
         {
             test:/\.css$/,
             use: [
-                'style-loader',
-                //miniCssExtractPlugin.loader,
+                //'style-loader',
+                miniCssExtractPlugin.loader,
                 'css-loader'
                 //{ loader: 'css-loader', options: {importLoaders: 1 } },
                 //'postcss-loader'
@@ -63,19 +63,32 @@ module.exports = {
 
         {
             test:/\.(png|svg|jpg|jpeg|gif)$/,
-            use:[
-                {loader:'file-loader', options:{name: 'image/[name].[ext]', outputPath:'assets/image', publicPath:'../image/'}}
-            ]
+            use:{
+              loader:'file-loader', 
+              options:{
+                name: '[name].[ext]', 
+                outputPath:'assets/image', 
+                publicPath:'../image/'//打包输出文件引用路径
+              }
+            }
         },
 
         {
             test:/\.(js|jsx)$/,
             use:{ 
                 loader: 'babel-loader', 
-                options: { presets: ['@babel/preset-env', '@babel/react'],compact:true} 
+                options: { 
+                  presets: ['@babel/preset-env', '@babel/react'],
+                  compact:true,
+                  plugins:["react-hot-loader/babel",["import", { "libraryName": "antd", "style": true }]]
+                } 
             },             
         }
         
     ]
+  },
+  
+  resolve: {
+    extensions: ['.js', '.jsx'], //后缀名自动补全
   }
 };

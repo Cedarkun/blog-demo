@@ -5,8 +5,6 @@ const webpack = require('webpack'),
     config = require('../webpack.config'),
     server =require('http').createServer(app),
     compiler = webpack(config);
-
-
 app.use(express.static(path.join(__dirname,'../client/build')));
 
 app.use(require('webpack-dev-middleware')(compiler, {

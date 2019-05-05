@@ -7,7 +7,7 @@ export default class NavBar extends React.Component {
     }
 
     render() {
-      let items=[{itemName:'HOMEaaa'},{itemName:'PHOTOS'},{itemName:'ABOUTME'}];
+      let items=[{itemName:'HOME'},{itemName:'PHOTOS'},{itemName:'ABOUTME'}];
       return (
        <nav className="header-navbar">
             <ul className="nav-menu">
