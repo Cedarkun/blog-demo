@@ -80,7 +80,12 @@ module.exports = {
                 options: { 
                   presets: ['@babel/preset-env', '@babel/react'],
                   compact:true,
-                  plugins:["react-hot-loader/babel",["import", { "libraryName": "antd", "style": true }]]
+                  plugins:[
+                    
+
+                    "react-hot-loader/babel",
+                    ["import", { "libraryName": "antd", "style": true }],
+                  ]  
                 } 
             },             
         }

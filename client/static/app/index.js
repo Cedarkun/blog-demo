@@ -1,13 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore } from 'redux'
 import { AppContainer } from 'react-hot-loader';
-import AppReducer from './reducers'
+//import AppReducer from './reducers'
 import IndexApp from './containers'
+import StoreConfig from './StoreConfig'
 import './style.css';
 
-let store = createStore(AppReducer);
+const store = StoreConfig(AppReducer);
 
 render(
   <AppContainer>
