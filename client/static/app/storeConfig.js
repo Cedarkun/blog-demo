@@ -1,6 +1,7 @@
 import {createStore,applyMiddleware,compose} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import  helloSaga  from './sagas'
+import AppReducer from './reducers'
 
 const win = window;
 const sagaMiddleware = createSagaMiddleware();
@@ -12,7 +13,7 @@ let storeEnhancers = compose(
 );
 
 export default function configureStore(initialState={}) {
-    const store = createStore(rootReducer, initialState,storeEnhancers);
+    const store = createStore(AppReducer, initialState,storeEnhancers);
     sagaMiddleware.run(helloSaga);
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers

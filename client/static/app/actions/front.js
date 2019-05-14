@@ -1,3 +1,39 @@
+export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+export const SELECT_NAVITEM = 'SELECT_NAVITEM'
+export const INVALIDATE_NAVITEM = 'INVALIDATE_NAVITEM'
+
+export function requestPosts(navitem) {
+  return {
+    type: REQUEST_POSTS,
+    navitem
+  }
+}
+
+export function receivePosts(navitem, json) {
+  return {
+    type: RECEIVE_POSTS,
+    navitem,
+    posts: json.data.children.map(child => child.data),
+    receivedAt: Date.now()
+  }
+}
+
+export function selectNavitem(navitem) {
+  return {
+    type: SELECT_NAVITEM,
+    navitem
+  }
+}
+
+export function invalidateNavitem(navitem) {
+  return {
+    type: INVALIDATE_NAVITEM,
+    navitem
+  }
+}
+
+/*
 export const actionsTypes = {
     GET_LIST:"GET_LIST",
     RESPONSE_LIST: "RESPONSE_LIST",
@@ -12,3 +48,4 @@ export const get_list = (count) => {
       count
     }
   }
+*/

@@ -3,12 +3,11 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux'
 import { AppContainer } from 'react-hot-loader';
-//import AppReducer from './reducers'
 import IndexApp from './containers'
 import StoreConfig from './StoreConfig'
 import './style.css';
 
-const store = StoreConfig(AppReducer);
+const store = StoreConfig();
 
 render(
   <AppContainer>
