@@ -1,39 +1,49 @@
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-export const SELECT_NAVITEM = 'SELECT_NAVITEM'
-export const INVALIDATE_NAVITEM = 'INVALIDATE_NAVITEM'
-
-export function requestPosts(navitem,startId,count) {
-  return {
-    type: REQUEST_POSTS,
-    navitem,
-    startId,
-    count
-  };
+export const actionTypes={
+  REQUEST_POSTS:'REQUEST_POSTS',
+  RECEIVE_POSTS: 'RECEIVE_POSTS',
+  REQUEST_POST_DETAIL:'REQUEST_POST_DETAIL',
+  RECEIVE_POST_DETAIL: 'RECEIVE_POST_DETAIL',
+  REQUEST_INTRO:'REQUEST_INTRO',
+  RECEIVE_INTRO:'RECEIVE_INTRO'
+  //INVALIDATE_NAVITEM: 'INVALIDATE_NAVITEM'
 };
 
-export function receivePosts(navitem, json) {
-  return {
-    type: RECEIVE_POSTS,
-    navitem,
-    posts: json.data.children.map(child => child.data),
-    receivedAt: Date.now()
-  };
+export const actions={
+  requestPosts: function(navitem,startId,postsCount=5) {
+    return {
+      type: REQUEST_POSTS,
+      navitem,
+      startId,
+      postsCount
+    };
+  },
+  requestPostDetail: function(id){
+    return {
+      type: REQUEST_POST_DETAIL,
+      id
+    }
+  },
+  requestIntro(){
+    return{
+      type: REQUEST_INTRO
+    }
+  }
+
 };
 
-export function selectNavitem(navitem) {
-  return {
-    type: SELECT_NAVITEM,
-    navitem
-  };
-};
 
-export function invalidateNavitem(navitem) {
-  return {
-    type: INVALIDATE_NAVITEM,
-    navitem
-  };
-};
+  /*
+  invalidateNavitem: function(navitem) {
+    return {
+      type: INVALIDATE_NAVITEM,
+      navitem
+    };
+  }
+  */
+
+
+
+
 
 /*
 export const actionsTypes = {

@@ -52,7 +52,7 @@ export function update (sql,values,callback){
       });  
 }  
 
-/*
+
 export function query(sql,callback){ 
     connection.query(sql,function(err, results, fields) {  
         if (err)  throw err;
@@ -65,4 +65,3 @@ export function query(sql,callback){
       });   
 }  
 exports.query = query;
-*/

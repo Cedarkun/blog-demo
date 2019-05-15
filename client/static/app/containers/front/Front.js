@@ -5,7 +5,7 @@ import {
     Switch,
 } from 'react-router-dom'
 import {connect} from 'react-redux'
-import Header from '../../components/home/header/Header'
+import Header from './components/header/Header'
 
 class Front extends Component {
     constructor(props) {

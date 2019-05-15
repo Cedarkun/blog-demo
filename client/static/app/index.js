@@ -7,6 +7,11 @@ import IndexApp from './containers'
 import StoreConfig from './StoreConfig'
 import './style.css';
 
+let div = document.createElement('div');
+div.setAttribute('id', 'app');
+document.body.appendChild(div);
+const mountNode = document.getElementById('app');
+
 const store = StoreConfig();
 
 render(
@@ -15,7 +20,7 @@ render(
       <IndexApp />
     </Provider>
   </AppContainer>,
-  document.getElementById('app')
+  mountNode
 );
 
 
