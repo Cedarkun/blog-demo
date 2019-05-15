@@ -13,13 +13,17 @@ class Front extends Component {
     }
     render() {
         return (
-            <BrowserRouter>
-                <div>
-                    <Switch>
-                        <Route  path="/" component={Header}/>
-                    </Switch>
-                </div>
-            </BrowserRouter>
+            <div>
+                <Header/>
+                <BrowserRouter>
+                    <div>
+                        <Switch>
+                            <Route  path="/" component={Header}/>
+                        </Switch>
+                    </div>
+                </BrowserRouter>
+            </div>
+            
         )
     }
 
