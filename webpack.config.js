@@ -21,12 +21,13 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins:[
+      //当webpack自动生成html文件的时候，会基于某个模板来进行。当然你也可以自定义自己的模板，
+      //如果没有定义webpack会使用默认的模板.默认情况下webpack使用ejs模板
        new htmlWebpackPlugin({
           template:'view/index.html',
           filename:'index.html',
         }),
-        
-        
+
         new miniCssExtractPlugin({
             filename: "assets/css/[name].css",
             chunkFilename: "[id].css"

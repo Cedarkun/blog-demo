@@ -5,14 +5,18 @@ export default function * helloSaga() {
 */
 
 import {take,put,call} from 'redux-saga/effects'
+import {get, post} from '../fetch/index'
+import FETCH_START from '../actions/fetch'
+import FETCH_END from '../actions/fetch'
+import SET_MESSAGE from '../actions/fetch'
 
-export function* getArticleList (tag,pageNum) {
-  yield put({type: IndexActionTypes.FETCH_START});
+export function* getPosts (startId,count) {
+  yield put({type: FETCH_START});
   try {
-      return yield call(get, `/getArticles?pageNum=${pageNum}&isPublish=true&tag=${tag}`);
+      return yield call(get, `/index?start=${startId}&count=${count}`);
   } catch (err) {
-      yield put({type: IndexActionTypes.SET_MESSAGE, msgContent: '网络请求错误', msgType: 0});
+      yield put({type: SET_MESSAGE, msgContent: '网络请求错误', msgType: 0});
   } finally {
-      yield put({type: IndexActionTypes.FETCH_END})
+      yield put({type: FETCH_END})
   }
 }

@@ -4,9 +4,11 @@ import {
     Route,
     Switch
 } from 'react-router-dom';
+import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import Front from './front/Front';
 import Login from '../components/login/Login';
+import postsByNavitem from '../reducers/front'
 //BrowserRouter
 //HashRouter
 class App extends Component {
@@ -30,4 +32,17 @@ class App extends Component {
 
 }
 
-export default connect()(App)
+function mapStateToProps(state) {
+    return {
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        postsByNavitem: bindActionCreators(postsByNavitem, dispatch)
+    }
+}
+
+
+export default connect(mapStateToProps,
+    mapDispatchToProps)(App)
