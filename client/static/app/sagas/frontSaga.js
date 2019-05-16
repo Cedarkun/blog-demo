@@ -1,7 +1,7 @@
-import {take,put,call} from 'redux-saga/effects'
-import {get, post} from '../fetch/index'
-import {actionsTypes as FetchActionTypes} from '../actions/fetch'
-import {actionTypes as FrontActionTypes} from '../actions/front'
+import {take,put,call} from 'redux-saga/effects';
+import {get, post} from '../fetch/index';
+import {actionTypes as FetchActionTypes} from '../actions/fetch';
+import {actionTypes as FrontActionTypes} from '../actions/front';
 
 
 export function* getPosts (navitem,startId,postsCount) {
@@ -20,10 +20,10 @@ export function* getPostsFlow () {
         let req = yield take(FrontActionTypes.REQUEST_POSTS);//等待dispatch REQUEST_POSTS action
         console.log(req);
         let res = yield call(getPosts, req.navitem,req.startId, req.postsCount);//阻塞
+        console.log(res);
         if(res){
-            if(res.code === 0){
-                //res.data.pageNum = req.pageNum;
-                yield put({type: FrontActionTypes.RESPONSE_POSTS, data:res.data});
+            if(res.data.code === 0){
+                yield put({type: FrontActionTypes.RECEIVE_POSTS, data:res.data.posts});//命令middleware向Store发起一个action
             }else{
                 yield put({type: FetchActionTypes.SET_MESSAGE, isFetching: false, msgContent: res.message, msgType: 0});
             }

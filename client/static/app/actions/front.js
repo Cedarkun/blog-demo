@@ -11,7 +11,7 @@ export const actionTypes={
 export const actions={
   requestPosts: function(navitem,startId,postsCount=5) {
     return {
-      type: REQUEST_POSTS,
+      type: actionTypes.REQUEST_POSTS,
       navitem,
       startId,
       postsCount
@@ -19,13 +19,13 @@ export const actions={
   },
   requestPostDetail: function(id){
     return {
-      type: REQUEST_POST_DETAIL,
+      type: actionTypes.REQUEST_POST_DETAIL,
       id
     }
   },
   requestIntro(){
     return{
-      type: REQUEST_INTRO
+      type: actionTypes.REQUEST_INTRO
     }
   }
 

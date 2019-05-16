@@ -3,9 +3,9 @@ import axios from 'axios'
 
 
 export function get(url) {
-    return axios.get(url)
+    return axios.get(url);
 }
 
 export function post(url, data) {
-    return axios.post(url, data)
+    return axios.post(url, data);
 }

@@ -8,7 +8,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
 import Front from './front/Front';
 import Login from '../components/login/Login';
-import postsByNavitem from '../reducers/front'
+
 //BrowserRouter
 //HashRouter
 class App extends Component {

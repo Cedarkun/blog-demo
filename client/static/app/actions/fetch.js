@@ -7,7 +7,7 @@ export const actionTypes={
 export const actions={
   fetchStart: function(){
     return {
-      type: FETCH_START,
+      type: actionTypes.FETCH_START,
       isFetching: true
     };
   },

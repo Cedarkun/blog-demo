@@ -1,11 +1,12 @@
-import React, {Component, PropTypes} from 'react'
+import React, {Component, PropTypes} from 'react';
 import {
     BrowserRouter,
     Route,
     Switch,
-} from 'react-router-dom'
-import {connect} from 'react-redux'
-import Header from './components/header/Header'
+} from 'react-router-dom';
+import {connect} from 'react-redux';
+import Header from './components/header/Header';
+import Home from './Home'
 
 class Front extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Front extends Component {
                 <BrowserRouter>
                     <div>
                         <Switch>
-                            <Route  path="/" component={Header}/>
+                            <Route  path="/" component={Home}/>
                         </Switch>
                     </div>
                 </BrowserRouter>

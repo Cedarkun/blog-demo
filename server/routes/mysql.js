@@ -7,11 +7,11 @@ const connection  = mysql.createConnection({
    port:'3306'
 });  
 connection.connect();  
-  
+
 // error will be an Error if one occurred during the query
 // results will contain the results of the query
 // fields will contain information about the returned results fields (if any)
-export function insert(sql,values,callback){ 
+function insert(sql,values,callback){ 
     connection.query(sql,values,function(err, results, fields) {  
         if (err) throw err;                           
         else if(results.affectedRows!=0)
@@ -23,9 +23,9 @@ export function insert(sql,values,callback){
         else callback(0);                                            
       });      
 }  
+exports.insert = insert;
 
-
-export function search(sql,values,callback){ 
+function search(sql,values,callback){ 
     connection.query(sql,values,function(err, results, fields) {  
         if (err) throw err;                           
         else if(results.length!=0)
@@ -37,9 +37,9 @@ export function search(sql,values,callback){
         else callback(0);                                            
       });  
 }  
+exports.search = search;
 
-
-export function update (sql,values,callback){ 
+function update (sql,values,callback){ 
     connection.query(sql,values,function(err, results, fields) {  
         if (err) throw err;                           
         else if(results.length!=0)
@@ -51,9 +51,9 @@ export function update (sql,values,callback){
         else callback(0);                                            
       });  
 }  
+exports.update = update;
 
-
-export function query(sql,callback){ 
+function query(sql,callback){ 
     connection.query(sql,function(err, results, fields) {  
         if (err)  throw err;
         if(results){

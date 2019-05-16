@@ -1,4 +1,4 @@
-import actionTypes from '../actions/front';
+import {actionTypes} from '../actions/front';
 
 const initialState = {
   navitem:'',
@@ -7,11 +7,11 @@ const initialState = {
   total:0
 };
 
-export function frontReducer(state = initialState, action) {
+const frontReducer=function (state = initialState, action) {
   switch (action.type) {
       case actionTypes.RECEIVE_POSTS:
           return {
-              ...state, posts: [...action.data.list], total: action.data.total
+              ...state, posts: [...action.data], total: action.data.length//action.data.total
           };
       case actionTypes.RECEIVE_POST_DETAIL:
           return {
@@ -22,3 +22,4 @@ export function frontReducer(state = initialState, action) {
           return state;
   }
 }
+export default frontReducer;

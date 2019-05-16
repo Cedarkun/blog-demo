@@ -1,8 +1,12 @@
-import React,{Component,PropTypes} from 'react'
-import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
-import {actions as frontActions} from '../../actions/front'
+import React,{Component} from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {actions as frontActions} from '../../actions/front';
+import ArticlePost from './components/post/ArticlePost';
 const {requestPosts,requestPostDetail} = frontActions;
+import './style.css';
+
 
 class Home extends Component{
     constructor(props){
@@ -10,18 +14,16 @@ class Home extends Component{
     }
 
     render(){
-        return(
-            <div>
-                <div>
-                    <Menus getArticleList={(tag)=>this.props.get_article_list(tag,1)} categories={this.props.categories} history={this.props.history}/>
-                </div>
-            </div>
-        )
+        const myId = this.props.myId;
+        const onePost = this.props.posts.map((post,index)=>{
+            return( <ArticlePost key={post.id} title={post.title} abstract={post.abstract} index={index}/>);
+        })
+        return(<div id="body">{onePost}</div>)
     }
 
+    //组件渲染之后调用，只调用一次
     componentDidMount() {
-        this.props.requestPostDetail(this.props.navitem,this.props.total);
-        this.props.total+=5
+        this.props.requestPosts(this.props.navitem,this.props.total);
     }
 }
 

@@ -5,8 +5,8 @@ export default function * helloSaga() {
 */
 
 import {fork} from 'redux-saga/effects'
-import actionTypes from '../actions/front';
+import {getPostsFlow} from './frontSaga'
 
 export default function* rootSaga() {
-
+    yield fork(getPostsFlow);
 }
