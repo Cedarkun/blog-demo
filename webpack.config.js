@@ -53,6 +53,7 @@ module.exports = {
     rules:[
         {
             test:/\.css$/,
+            exclude: /node_module/,
             use: [
                 //'style-loader',
                 miniCssExtractPlugin.loader,
@@ -76,6 +77,7 @@ module.exports = {
 
         {
             test:/\.(js|jsx)$/,
+            exclude: /node_module/,
             use:{ 
                 loader: 'babel-loader', 
                 options: { 

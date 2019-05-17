@@ -175,6 +175,9 @@
 .header-navbar .nav-menu .menu-item a{
     color:#686868;
 }
+.header-navbar .nav-menu .menu-item,.current a{
+    color:#fb9593;
+}
 .header-navbar .nav-menu .menu-item:hover{
     background:rgba(255,255,255,0.65);
     filter:Alpha(opacity=65); 

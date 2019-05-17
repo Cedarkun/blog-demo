@@ -1,5 +1,5 @@
 import React, {Component, PropTypes} from 'react';
-import TitleBar from './TitleBar';
+import TitleBar from '../../containers/TitleBar';
 import NavBar from './NavBar';
 import Banner from './Banner';
 import './style.css';
