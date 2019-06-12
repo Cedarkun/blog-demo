@@ -1,9 +1,14 @@
 import React, {Component, PropTypes} from 'react';
 
-export default class Header extends React.Component {
+export default class TitleBar extends React.Component {
     constructor(props){
       super(props);
     }
+
+    handleLonginClick(e){
+        e.preventDefault();
+        this.props.handleTitleBarClick();
+    };
 
     render() {
       return (
@@ -16,9 +21,10 @@ export default class Header extends React.Component {
             </div>
             <div className="header-logo"><h3>Cedar Blog</h3></div>
             <div className="header-userinfo">
-                <div className="user-portrait">
-                    <a href="#"></a>
-                </div>
+                {this.props.admin?
+                    <div className="user-portrait">admin</div>
+                    :<div className="user-portrait" onClick={this.handleLonginClick.bind(this)}>user</div>
+                }
                 <ul className="social-links">
                     <li className="qq"><a href="#"></a></li>
                     <li className="email"><a href="#"></a></li>

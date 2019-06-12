@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import login from './login';
+import fetch from './fetchReducer';
 import front from './frontReducer';
+import userInfo from './userInfoReducer';
 
-const AppReducer = combineReducers({login,front})
-
+const AppReducer = combineReducers({fetch,front,userInfo})
 
 export default AppReducer;

@@ -5,8 +5,11 @@ export default function * helloSaga() {
 */
 
 import {fork} from 'redux-saga/effects'
-import {getPostsFlow} from './frontSaga'
+import {getPostsFlow,getTagsFlow} from './frontSaga'
+import {loginFlow} from './userInfoSaga'
 
 export default function* rootSaga() {
     yield fork(getPostsFlow);
+    yield fork(getTagsFlow);
+    yield fork(loginFlow);
 }

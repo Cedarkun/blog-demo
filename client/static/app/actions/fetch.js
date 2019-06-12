@@ -11,7 +11,7 @@ export const actions={
       isFetching: true
     };
   },
-  /*
+  
   fetchEnd: function(){
     return {
       type: FETCH_END,
@@ -27,5 +27,5 @@ export const actions={
       msgContent
     };
   },
-  */
+  
 };

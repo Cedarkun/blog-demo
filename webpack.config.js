@@ -52,15 +52,21 @@ module.exports = {
   module:{
     rules:[
         {
-            test:/\.css$/,
+            test:/\.(css)$/,
             exclude: /node_module/,
             use: [
-                //'style-loader',
+                'style-loader',
                 miniCssExtractPlugin.loader,
                 'css-loader'
                 //{ loader: 'css-loader', options: {importLoaders: 1 } },
                 //'postcss-loader'
             ]
+        },
+        {
+          test: /\.less$/,
+          use: ['style-loader', 'css-loader', 
+            {loader:'less-loader',options:{modifyVars: {'primary-color': '#fb9593'},javascriptEnabled:true}}
+          ]
         },
 
         {

@@ -1,20 +1,30 @@
 export const actionTypes={
+  REQUEST_TAGS:'REQUEST_TAGS',
+  RECEIVE_TAGS:'RECEIVE_TAGS',
   REQUEST_POSTS:'REQUEST_POSTS',
   RECEIVE_POSTS: 'RECEIVE_POSTS',
   REQUEST_POST_DETAIL:'REQUEST_POST_DETAIL',
   RECEIVE_POST_DETAIL: 'RECEIVE_POST_DETAIL',
   REQUEST_INTRO:'REQUEST_INTRO',
-  RECEIVE_INTRO:'RECEIVE_INTRO'
+  RECEIVE_INTRO:'RECEIVE_INTRO',
   //INVALIDATE_NAVITEM: 'INVALIDATE_NAVITEM'
 };
 
 export const actions={
-  requestPosts: function(navitem,startId,postsCount=5) {
+  requestTags: function(tags) {
+    return{
+      type: actionTypes.REQUEST_TAGS,
+      tags
+    };
+  },
+  requestPosts: function(navitem, curTag, startId, clear=false,postsCount=5) {
     return {
       type: actionTypes.REQUEST_POSTS,
       navitem,
+      curTag,
       startId,
-      postsCount
+      clear,
+      postsCount      
     };
   },
   requestPostDetail: function(id){

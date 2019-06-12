@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 
-export default class Header extends React.Component {
+export default class Banner extends React.Component {
     constructor(props){
       super(props);
     }
